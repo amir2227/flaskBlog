@@ -14,7 +14,7 @@
                         <td><a class="pull-left" href="/article/{{ article.id }}"><strong><font color="black" size="4">{{ article.title }} </font></strong></a></td>
                             {% for like in likes %}
                                 {% if like.id_user == session.id and article.id == like.id_article and session.logged_in != NULL  %}
-                                    <td><a class="pull-right"><img  src='https://image.flaticon.com/icons/png/32/148/148838.png'/></a></td>
+                                    <td><a class="pull-right"><img width="40px" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNTEycHgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnIGlkPSJfeDMxXzY2X3gyQ19fSGVhcnRfeDJDX19Mb3ZlX3gyQ19fTGlrZV94MkNfX1R3aXR0ZXIiPjxnPjxwYXRoIGQ9Ik0zNjUuNCw1OS42MjhjNjAuNTYsMCwxMDkuNiw0OS4wMywxMDkuNiwxMDkuNDdjMCwxMDkuNDctMTA5LjYsMTcxLjgtMjE5LjA2LDI4MS4yNzEgICAgQzE0Ni40NywzNDAuODk4LDM3LDI3OC41NjgsMzcsMTY5LjA5OWMwLTYwLjQ0LDQ5LjA0LTEwOS40NywxMDkuNDctMTA5LjQ3YzU0LjczLDAsODIuMSwyNy4zNywxMDkuNDcsODIuMSAgICBDMjgzLjMsODYuOTk5LDMxMC42Nyw1OS42MjgsMzY1LjQsNTkuNjI4eiIgc3R5bGU9ImZpbGw6I0ZGNzk3OTsiLz48L2c+PC9nPjxnIGlkPSJMYXllcl8xIi8+PC9zdmc+"/></a></td>
                                 {% endif %}
                             {% endfor %}
                     </tr>

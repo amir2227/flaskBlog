@@ -7,7 +7,7 @@ import sqlite3
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///DataBase.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://heqogwinqzgnlb:f858a7c928f22d4be9fd7a52546486980cd0b6db96e6b0bba527b614f36927eb@ec2-34-205-209-14.compute-1.amazonaws.com:5432/dae9qflhh73782"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 app.config['SECRET_KEY'] = 'ldfjsolasfuasdfjsodfusoij4w09r8pswojufsldkfjdf9'
 
@@ -15,13 +15,13 @@ db = SQLAlchemy(app)
 
 conn=db.engine.raw_connection()
 c=conn.cursor()
-c.execute('CREATE TABLE IF NOT EXISTS Users (id INTEGER PRIMARY KEY AUTOINCREMENT,name NVARCHAR(20) , email TEXT , username TEXT , password TEXT)')
+c.execute('CREATE TABLE IF NOT EXISTS Users (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT , email TEXT , username TEXT , password TEXT)')
 c.execute('SELECT * FROM  Users')
-if len(c.fetchall())==0 :
-    c.execute('INSERT INTO  Users (id,name,email,username,password) VALUES (1,"saman","ezsaman@gmai.com","saman","admin")')
-c.execute('CREATE TABLE IF NOT EXISTS Articles(id INTEGER PRIMARY KEY AUTOINCREMENT,title NVARCHAR(100),id_creat INTEGER,writer NVARCHAR(20),body NVARCHAR(100000),create_date TEXT)')
+#if len(c.fetchall())==0 :
+ #   c.execute('INSERT INTO  Users (id,name,email,username,password) VALUES (1,"saman","ezsaman@gmai.com","saman","admin")')
+c.execute('CREATE TABLE IF NOT EXISTS Articles(id INTEGER PRIMARY KEY AUTOINCREMENT,title TEXT,id_creat INTEGER,writer TEXT,body TEXT,create_date TEXT)')
 
-c.execute('CREATE TABLE IF NOT EXISTS Comments (id INTEGER PRIMARY KEY AUTOINCREMENT,id_article INTEGER,comment NVARCHAR(30),id_user INTEGER,username TEXT , create_date TEXT)')
+c.execute('CREATE TABLE IF NOT EXISTS Comments (id INTEGER PRIMARY KEY AUTOINCREMENT,id_article INTEGER,comment TEXT,id_user INTEGER,username TEXT , create_date TEXT)')
 c.execute('CREATE TABLE IF NOT EXISTS Likes (id INTEGER PRIMARY KEY AUTOINCREMENT,id_article INTEGER,id_user INTEGER,username TEXT )')
 conn.commit()
 
